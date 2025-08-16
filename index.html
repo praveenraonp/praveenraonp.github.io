@@ -1,89 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sofia the First Birthday Invite</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Open Sans', sans-serif;
-      background: linear-gradient(#f9e3ff, #fceaff);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    .envelope {
-      width: 300px;
-      height: 200px;
-      background: #d2a1f7;
-      position: relative;
-      perspective: 1000px;
-      cursor: pointer;
-    }
-
-    .flap {
-      width: 100%;
-      height: 100%;
-      background: #c38cf7;
-      position: absolute;
-      top: 0;
-      left: 0;
-      transform-origin: top;
-      transition: transform 1s;
-      z-index: 2;
-    }
-
-    .envelope.open .flap {
-      transform: rotateX(-180deg);
-    }
-
-    .card {
-      background: white;
-      width: 100%;
-      height: 100%;
-      padding: 20px;
-      box-sizing: border-box;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 1;
-      text-align: center;
-      font-family: 'Great Vibes', cursive;
-      font-size: 18px;
-      color: #5a2a83;
-      background-image: url('https://upload.wikimedia.org/wikipedia/en/9/9d/Sofia_the_First_Title.png');
-      background-repeat: no-repeat;
-      background-position: center 10px;
-      background-size: 60%;
-      padding-top: 100px;
-    }
-
-    .card h2 {
-      font-size: 24px;
-      margin-bottom: 10px;
-    }
-
-    .card p {
-      margin: 10px 0;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Party Invitation</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Georgia", serif;
+            background: url('C:\\Users\\praon\\Downloads\\01e97c56a42fdbf1e538d6e555257029.jpg') repeat;
+            background-size: 50px 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-y: auto;
+        }
+        .invitation {
+            background: #fff;
+            width: 90%; /* More responsive for mobile */
+            max-width: 400px; /* Maintain max width for larger screens */
+            padding: 10px; /* Reduced padding for mobile */
+            text-align: center;
+            border: 6px solid #dcd0f7; /* Reduced border for mobile */
+            box-shadow: 0 0 8px rgba(0,0,0,0.1); /* Reduced shadow for mobile */
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .crown {
+            width: 120px; /* Further reduced for mobile */
+            height: auto;
+            margin: 0 auto 10px; /* Reduced margin for mobile */
+        }
+        .additional-image {
+            width: 100%;
+            max-width: 300px; /* Adjusted for mobile */
+            height: auto;
+            margin: 0 auto 10px; /* Reduced margin for mobile */
+        }
+        .title {
+            font-family: "Sofia", cursive;
+            font-size: 20px; /* Further reduced for mobile */
+            color: #8a4af3;
+            font-weight: bold;
+            margin-bottom: 8px; /* Reduced margin for mobile */
+        }
+        .details {
+            font-size: 12px; /* Reduced for mobile readability */
+            color: #333;
+            line-height: 1.8; /* Adjusted for mobile */
+            margin: 8px 0; /* Reduced margin for mobile */
+            font-weight: bold;
+        }
+        .highlight {
+            font-size: 14px; /* Reduced for mobile */
+            color: #8a4af3;
+            font-weight: bold;
+        }
+        .form-container {
+            margin-top: 10px; /* Reduced margin for mobile */
+        }
+        .purple-line {
+            width: 100%;
+            height: 1px; /* Reduced height for mobile */
+            background-color: #8a4af3;
+            margin: 8px 0; /* Reduced margin for mobile */
+        }
+        .rsvp-button {
+            margin: 10px 0; /* Reduced margin for mobile */
+            text-align: center;
+        }
+        .rsvp-button a {
+            background-color: #8a4af3;
+            color: white;
+            padding: 6px 12px; /* Reduced padding for mobile */
+            text-decoration: none;
+            border-radius: 4px; /* Reduced radius for mobile */
+            font-size: 12px; /* Reduced font size for mobile */
+            display: inline-block;
+        }
+        .rsvp-button a:hover {
+            background-color: #6d2a9a;
+        }
+        .map-container {
+            margin-top: 10px; /* Reduced margin for mobile */
+        }
+        .map-container iframe {
+            width: 100%;
+            height: 150px; /* Reduced height for mobile */
+        }
+        .content-container {
+            display: flex;
+            flex-direction: column; /* Stack on mobile */
+            width: 100%;
+        }
+        .details-section {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 10px; /* Reduced margin for mobile */
+        }
+        .map-section {
+            width: 100%;
+        }
+        @media (min-width: 768px) { /* Tablet and desktop */
+            .invitation {
+                padding: 20px;
+                border: 10px solid #dcd0f7;
+                max-width: 800px; /* Restore max width for larger screens */
+            }
+            .crown {
+                width: 200px;
+                margin: 0 auto 20px;
+            }
+            .additional-image {
+                max-width: 400px;
+                margin: 0 auto 20px;
+            }
+            .title {
+                font-size: 28px;
+                margin-bottom: 10px;
+            }
+            .details {
+                font-size: 16px;
+                line-height: 2.5;
+                margin: 15px 0;
+            }
+            .highlight {
+                font-size: 18px;
+            }
+            .rsvp-button a {
+                padding: 10px 20px;
+                font-size: 16px;
+                border-radius: 5px;
+            }
+            .map-container iframe {
+                height: 200px;
+            }
+            .content-container {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            .details-section {
+                width: 45%;
+                margin-bottom: 0;
+            }
+            .map-section {
+                width: 45%;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="envelope" onclick="this.classList.toggle('open')">
-    <div class="flap"></div>
-    <div class="card">
-      <h2>You're Invited!</h2>
-      <p>Join us for a royal celebration</p>
-      <p>in honor of Princess [Your Daughter's Name]</p>
-      <p><strong>Date:</strong> August 10th</p>
-      <p><strong>Time:</strong> 3 PM to 6 PM</p>
-      <p><strong>Place:</strong> 123 Enchanted Lane, Magicville</p>
-      <p>Please RSVP</p>
+    <div class="invitation">
+        <img src="images/51b8b72759513226774270cb5175330b-removebg-preview.png" alt="Crown" class="crown">
+        <a href="https://forms.gle/1PjsCo9VUHPLhaZ1A" target="_blank">
+            <img src="images/133234.png" alt="RSVP" class="additional-image">
+        </a>
+        <div class="purple-line"></div>
+        <div class="content-container">
+            <div class="details-section">
+                <div class="event-info">
+                    <div class="details">Location: 970 Daylight Cir, Lake Mary, FL 32746</div>
+                </div>
+            </div>
+            <div class="map-section">
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3430.695647318583!2d-81.33412368488665!3d28.75753598243783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e77c4a4f1b7b2d%3A0x7e8e9b9e9b9e9b9e!2s970%20Daylight%20Cir%2C%20Lake%20Mary%2C%20FL%2032746!5e0!3m2!1sen!2sus!4v1692212345678!5m2!1sen!2sus" width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </body>
 </html>
