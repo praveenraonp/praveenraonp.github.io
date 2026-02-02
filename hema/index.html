@@ -61,19 +61,57 @@ body {
 }
 
 .card {
-	background: linear-gradient(180deg, #f4f157 0%, #c8f157 100%);
+	background: #d892c4;
 	max-width: 550px;
 	margin: 20px auto;
-	padding: 50px 40px;
+	padding: 30px;
 	border-radius: 40px;
 	box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
 	position: relative;
 	z-index: 2;
+	text-align: center;
 }
 
-.header {
-	text-align: center;
-	margin-bottom: 30px;
+.image-container {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+}
+
+.invite-image {
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+	border-radius: 20px;
+	display: block;
+}
+
+.rsvp-button {
+	position: absolute;
+	bottom: 9%;
+	right: 19%;
+	transform: rotate(-11deg);
+	background: transparent;
+	color: #7457ae;
+	padding: 0;
+	font-size: 1.4em;
+	font-weight: bold;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	box-shadow: none;
+	text-decoration: none;
+	display: inline-block;
+	transition: all 0.3s ease;
+	z-index: 10;
+	animation: blink 1s infinite;
+	text-shadow: 0 0 20px rgba(116, 87, 174, 1), 0 0 30px rgba(116, 87, 174, 0.9), 0 0 40px rgba(116, 87, 174, 0.7);
+}
+
+.rsvp-button:hover {
+	transform: rotate(-8deg) scale(1.15);
+	animation: none;
+	text-shadow: 0 0 25px rgba(116, 87, 174, 1), 0 0 35px rgba(116, 87, 174, 1), 0 0 45px rgba(116, 87, 174, 0.8);
 }
 
 .its-a {
@@ -187,12 +225,58 @@ body {
 	font-weight: bold;
 }
 
+.venue-info {
+	margin-top: 25px;
+	padding: 20px;
+	background: #d6c5e5;
+	border-radius: 15px;
+	backdrop-filter: blur(10px);
+}
+
+.venue-title {
+	font-size: 1.3em;
+	color: #5a3a6e;
+	font-weight: bold;
+	margin-bottom: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+}
+
+.venue-address {
+	font-size: 1.2em;
+	color: #6b4d8a;
+	line-height: 1.6;
+	text-shadow: none;
+	font-weight: 500;
+}
+
+.directions-button {
+	display: inline-block;
+	margin-top: 15px;
+	padding: 12px 30px;
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	color: white;
+	text-decoration: none;
+	border-radius: 50px;
+	font-size: 1.1em;
+	font-weight: bold;
+	box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+	transition: all 0.3s ease;
+}
+
+.directions-button:hover {
+	transform: scale(1.05);
+	box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
 /* Popcorn animation */
 .popcorn {
 	position: fixed;
 	font-size: 2em;
 	animation: pop 5s ease-in-out infinite;
-	z-index: 1;
+	z-index: 999;
 }
 
 @keyframes pop {
@@ -200,6 +284,39 @@ body {
 	20% { opacity: 1; }
 	80% { opacity: 1; }
 	100% { bottom: 100vh; opacity: 0; transform: rotate(360deg); }
+}
+
+@keyframes blink {
+	0%, 49% { opacity: 1; }
+	50%, 100% { opacity: 0; }
+}
+
+/* Blinking bulbs overlay */
+.bulb {
+	position: absolute;
+	width: 14px;
+	height: 14px;
+	border-radius: 50%;
+	background: radial-gradient(circle, #ffffff 0%, #ffff99 30%, #ffe066 60%, transparent 80%);
+	box-shadow: 0 0 25px rgba(255, 255, 150, 1), 0 0 40px rgba(255, 255, 100, 0.8), 0 0 60px rgba(255, 255, 50, 0.6);
+	animation: bulbBlink 1.5s ease-in-out infinite;
+	z-index: 5;
+	pointer-events: none;
+}
+
+@keyframes bulbBlink {
+	0%, 100% { 
+		opacity: 1; 
+		transform: scale(1.1);
+		box-shadow: 0 0 30px rgba(255, 255, 150, 1), 0 0 50px rgba(255, 255, 100, 0.9), 0 0 70px rgba(255, 255, 50, 0.7);
+		background: radial-gradient(circle, #ffffff 0%, #ffff99 30%, #ffe066 60%, transparent 80%);
+	}
+	50% { 
+		opacity: 0.4; 
+		transform: scale(0.95);
+		box-shadow: 0 0 10px rgba(255, 255, 200, 0.4), 0 0 20px rgba(255, 255, 200, 0.3);
+		background: radial-gradient(circle, #ffffcc 0%, #ffe099 50%, transparent 70%);
+	}
 }
 
 </style>
@@ -223,51 +340,75 @@ body {
 <div class="popcorn" style="left: 90%; animation-delay: 3s;">🍿</div>
 
 <div class="card">
-	<div class="header">
-		<div class="its-a">it's a</div>
-		<div class="movie-title">MOVIE</div>
-		<div class="party-text">Party</div>
-	</div>
-
-	<div class="movie-icons">
-		<span class="icon" style="animation-delay: 0s;">🎬</span>
-		<span class="icon" style="animation-delay: 0.3s;">🎞️</span>
-		<span class="icon" style="animation-delay: 0.6s;">🎟️</span>
-		<span class="icon" style="animation-delay: 0.9s;">🍿</span>
-		<span class="icon" style="animation-delay: 1.2s;">🥤</span>
-		<span class="icon" style="animation-delay: 1.5s;">🕶️</span>
-	</div>
-
-	<div class="celebrate-text">JOIN US TO CELEBRATE</div>
+	<!-- Blinking bulbs around card border -->
+	<div class="bulb" style="top: -7px; left: 5%; animation-delay: 0s;"></div>
+	<div class="bulb" style="top: -7px; left: 12%; animation-delay: 0.2s;"></div>
+	<div class="bulb" style="top: -7px; left: 19%; animation-delay: 0.4s;"></div>
+	<div class="bulb" style="top: -7px; left: 26%; animation-delay: 0.6s;"></div>
+	<div class="bulb" style="top: -7px; left: 33%; animation-delay: 0.8s;"></div>
+	<div class="bulb" style="top: -7px; left: 40%; animation-delay: 1s;"></div>
+	<div class="bulb" style="top: -7px; left: 47%; animation-delay: 1.2s;"></div>
+	<div class="bulb" style="top: -7px; left: 54%; animation-delay: 0.3s;"></div>
+	<div class="bulb" style="top: -7px; left: 61%; animation-delay: 0.5s;"></div>
+	<div class="bulb" style="top: -7px; left: 68%; animation-delay: 0.7s;"></div>
+	<div class="bulb" style="top: -7px; left: 75%; animation-delay: 0.9s;"></div>
+	<div class="bulb" style="top: -7px; left: 82%; animation-delay: 1.1s;"></div>
+	<div class="bulb" style="top: -7px; left: 89%; animation-delay: 0.1s;"></div>
+	<div class="bulb" style="top: -7px; left: 96%; animation-delay: 0.4s;"></div>
 	
-	<div class="birthday-name">Hemapriya's <span class="age">12th</span> Birthday!</div>
-
-	<div class="details">
-		<div class="detail-line">
-			<span class="emoji">📅</span>
-			<strong>Date:</strong>
-			<span>Thursday, February 13th, 2026</span>
-		</div>
-		<div class="detail-line">
-			<span class="emoji">🕐</span>
-			<strong>Time:</strong>
-			<span>6:00 PM onwards</span>
-		</div>
-		<div class="detail-line">
-			<span class="emoji">📍</span>
-			<strong>Venue:</strong>
-			<span>At Home - Movie Night with Friends!</span>
-		</div>
-		<div class="detail-line">
-			<span class="emoji">🎭</span>
-			<strong>Theme:</strong>
-			<span>Movie Night Extravaganza</span>
-		</div>
+	<!-- Right side -->
+	<div class="bulb" style="top: 8%; right: -7px; animation-delay: 0.2s;"></div>
+	<div class="bulb" style="top: 16%; right: -7px; animation-delay: 0.5s;"></div>
+	<div class="bulb" style="top: 24%; right: -7px; animation-delay: 0.8s;"></div>
+	<div class="bulb" style="top: 32%; right: -7px; animation-delay: 1.1s;"></div>
+	<div class="bulb" style="top: 40%; right: -7px; animation-delay: 0.3s;"></div>
+	<div class="bulb" style="top: 48%; right: -7px; animation-delay: 0.6s;"></div>
+	<div class="bulb" style="top: 56%; right: -7px; animation-delay: 0.9s;"></div>
+	<div class="bulb" style="top: 64%; right: -7px; animation-delay: 1.2s;"></div>
+	<div class="bulb" style="top: 72%; right: -7px; animation-delay: 0.4s;"></div>
+	<div class="bulb" style="top: 80%; right: -7px; animation-delay: 0.7s;"></div>
+	<div class="bulb" style="top: 88%; right: -7px; animation-delay: 1s;"></div>
+	
+	<!-- Bottom side -->
+	<div class="bulb" style="bottom: -7px; left: 5%; animation-delay: 0.6s;"></div>
+	<div class="bulb" style="bottom: -7px; left: 12%; animation-delay: 0.8s;"></div>
+	<div class="bulb" style="bottom: -7px; left: 19%; animation-delay: 1s;"></div>
+	<div class="bulb" style="bottom: -7px; left: 26%; animation-delay: 1.2s;"></div>
+	<div class="bulb" style="bottom: -7px; left: 33%; animation-delay: 0.2s;"></div>
+	<div class="bulb" style="bottom: -7px; left: 40%; animation-delay: 0.4s;"></div>
+	<div class="bulb" style="bottom: -7px; left: 47%; animation-delay: 0.6s;"></div>
+	<div class="bulb" style="bottom: -7px; left: 54%; animation-delay: 0.8s;"></div>
+	<div class="bulb" style="bottom: -7px; left: 61%; animation-delay: 1s;"></div>
+	<div class="bulb" style="bottom: -7px; left: 68%; animation-delay: 1.2s;"></div>
+	<div class="bulb" style="bottom: -7px; left: 75%; animation-delay: 0.3s;"></div>
+	<div class="bulb" style="bottom: -7px; left: 82%; animation-delay: 0.5s;"></div>
+	<div class="bulb" style="bottom: -7px; left: 89%; animation-delay: 0.7s;"></div>
+	<div class="bulb" style="bottom: -7px; left: 96%; animation-delay: 0.9s;"></div>
+	
+	<!-- Left side -->
+	<div class="bulb" style="top: 8%; left: -7px; animation-delay: 0.8s;"></div>
+	<div class="bulb" style="top: 16%; left: -7px; animation-delay: 1.1s;"></div>
+	<div class="bulb" style="top: 24%; left: -7px; animation-delay: 0.2s;"></div>
+	<div class="bulb" style="top: 32%; left: -7px; animation-delay: 0.5s;"></div>
+	<div class="bulb" style="top: 40%; left: -7px; animation-delay: 0.8s;"></div>
+	<div class="bulb" style="top: 48%; left: -7px; animation-delay: 1.1s;"></div>
+	<div class="bulb" style="top: 56%; left: -7px; animation-delay: 0.3s;"></div>
+	<div class="bulb" style="top: 64%; left: -7px; animation-delay: 0.6s;"></div>
+	<div class="bulb" style="top: 72%; left: -7px; animation-delay: 0.9s;"></div>
+	<div class="bulb" style="top: 80%; left: -7px; animation-delay: 1.2s;"></div>
+	<div class="bulb" style="top: 88%; left: -7px; animation-delay: 0.4s;"></div>
+	
+	<div class="image-container">
+		<img src="image-1770059106.9315171.png" alt="Hemapriya's 12th Birthday Movie Night Invitation" class="invite-image">
+		<a href="https://forms.gle/MNec9B78fWcSbvpPA" target="_blank" class="rsvp-button">RSVP NOW</a>
 	</div>
-
-	<div class="rsvp-section">
-		<div class="rsvp-text">RSVP TO MOMMY AT</div>
-		<div class="rsvp-contact">📱 [PHONE NUMBER]</div>
+	
+	<div class="venue-info">
+		<div class="venue-title">📍 Venue</div>
+		<div class="venue-address">2565 Leyland Cypress Lane<br>Sanford, FL 32773</div>
+		<a href="https://www.google.com/maps/dir/?api=1&destination=2565+Leyland+Cypress+Lane+Sanford+FL+32773" target="_blank" class="directions-button">
+			🗺️ Get Directions
+		</a>
 	</div>
 </div>
 
