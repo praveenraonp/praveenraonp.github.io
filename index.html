@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html><head><style id="qw-theme">:root {
+  --color-bg: #faf9fc;
+  --color-text: #131920;
+  --color-navbar-bg: #f9f9fb;
+  --color-bg-chat-view: #fcfcfd;
+  --color-bg-secondary: #ffffff;
+  --color-bg-tertiary: #f9fafb;
+  --color-bg-hover: #f3f4f6;
+  --color-surface: #f9fafb;
+  --color-surface-hover: #f3f4f6;
+  --color-surface-active: #e5e7eb;
+  --color-border: rgba(0, 0, 0, .12);
+  --color-border-light: rgba(0, 0, 0, .06);
+  --color-border-strong: #d1d5db;
+  --color-primary: #4200db;
+  --color-primary-dark: #35009e;
+  --color-primary-light: #8575ff;
+  --color-primary-bg: #e8e6ff;
+  --color-primary-hover-border: #35009e;
+  --color-nav-icon-active: #4200db;
+  --color-nav-hover-border: #4200db;
+  --color-primary-alpha-3: color-mix(in srgb, #4200db 3%, transparent);
+  --color-primary-alpha-5: color-mix(in srgb, #4200db 5%, transparent);
+  --color-primary-alpha-8: color-mix(in srgb, #4200db 8%, transparent);
+  --color-primary-alpha-12: color-mix(in srgb, #4200db 12%, transparent);
+  --color-primary-alpha-15: color-mix(in srgb, #4200db 15%, transparent);
+  --color-primary-alpha-20: color-mix(in srgb, #4200db 20%, transparent);
+  --color-primary-alpha-25: color-mix(in srgb, #4200db 25%, transparent);
+  --color-primary-alpha-30: color-mix(in srgb, #4200db 30%, transparent);
+  --color-primary-alpha-40: color-mix(in srgb, #4200db 40%, transparent);
+  --color-primary-alpha-50: color-mix(in srgb, #4200db 50%, transparent);
+  --color-primary-alpha-60: color-mix(in srgb, #4200db 60%, transparent);
+  --color-primary-subtle: color-mix(in srgb, #4200db 12%, transparent);
+  --color-primary-border: color-mix(in srgb, #4200db 30%, transparent);
+  --color-focus-ring: color-mix(in srgb, #4200db 50%, transparent);
+  --color-sidebar-hover: color-mix(in srgb, #4200db 12%, transparent);
+  --color-accent: #4200db;
+  --color-accent-foreground: #4200db;
+  --color-accent-dark: #35009e;
+  --color-accent-light: #e8e6ff;
+  --color-accent-inverse: #ffffff;
+  --color-link: #4200db;
+  --color-primary-gradient-end: #e8e6ff;
+  --color-primary-bg-solid: #e8e6ff;
+  --color-user-bubble: #F3F3F7;
+  --color-user-bubble-text: #131920;
+  --color-text-secondary: #5e5e5e;
+  --color-text-tertiary: #656871;
+  --color-text-muted: #9ca3af;
+  --color-text-on-primary: #ffffff;
+  --color-success: #00802f;
+  --color-success-dark: #00471e;
+  --color-success-light: #d9ffd6;
+  --color-success-hover: #005c26;
+  --color-success-bg: #e6f5eb;
+  --color-success-border: #b3d9bf;
+  --color-success-foreground: #00802f;
+  --color-success-dark-foreground: #00471e;
+  --color-success-text: #00471e;
+  --color-error: #db0000;
+  --color-error-dark: #700000;
+  --color-error-light: #ffe0e0;
+  --color-error-hover: #ffe0e0;
+  --color-error-bg: #fceaea;
+  --color-error-border: #f2cccc;
+  --color-error-active-border: #db0000;
+  --color-error-foreground: #db0000;
+  --color-error-dark-foreground: #700000;
+  --color-error-inverse: #ffffff;
+  --color-error-text: #700000;
+  --color-warning: #f2b100;
+  --color-warning-dark: #573a00;
+  --color-warning-light: #fffbbd;
+  --color-warning-hover: #db9200;
+  --color-warning-bg: #fef7e6;
+  --color-warning-border: #f9dfa3;
+  --color-warning-foreground: #f2b100;
+  --color-warning-dark-foreground: #573a00;
+  --color-warning-inverse: #573a00;
+  --color-surface-warning: #fffbbd;
+  --color-text-warning: #573a00;
+  --color-info: #006ce0;
+  --color-info-dark: #002a66;
+  --color-info-light: #d1f1ff;
+  --color-info-hover: #003b8f;
+  --color-info-bg: #ebf3fc;
+  --color-info-border: #b3d1f0;
+  --color-info-foreground: #006ce0;
+  --color-info-dark-foreground: #002a66;
+  --color-info-inverse: #ffffff;
+  --color-overlay: rgba(0, 0, 0, .5);
+  --color-shadow: rgba(0, 0, 0, .08);
+  --color-hover: rgba(0, 0, 0, .05);
+  --color-tooltip-bg: rgba(0, 0, 0, .85);
+  --color-tooltip-text: #ffffff;
+  --color-voice-purple: #8575ff;
+  --color-voice-purple-dark: #4200db;
+  --color-voice-purple-light: #8575ff;
+  --color-voice-red: #db0000;
+  --color-voice-red-dark: #700000;
+  --color-voice-amber: #f2b100;
+  --color-voice-purple-glow: rgba(66, 0, 219, .4);
+  --color-voice-red-glow: rgba(219, 0, 0, .4);
+  --font-sans: "Amazon Ember", "Helvetica Neue", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "SF Mono", "Monaco", "Menlo", "Consolas", monospace;
+  --text-2xs: .5625rem;
+  --text-xs: .625rem;
+  --text-sm: .6875rem;
+  --text-base: .75rem;
+  --text-md: .8125rem;
+  --text-lg: .875rem;
+  --text-xl: 1rem;
+  --text-2xl: 1.125rem;
+  --text-3xl: 1.25rem;
+  --text-4xl: 1.5rem;
+  --text-5xl: 2rem;
+  --spacing-1: calc(.25rem * 1);
+  --spacing-1-5: calc(.25rem * 1.5);
+  --spacing-2: calc(.25rem * 2);
+  --spacing-3: calc(.25rem * 3);
+  --spacing-4: calc(.25rem * 4);
+  --spacing-5: calc(.25rem * 5);
+  --spacing-6: calc(.25rem * 6);
+  --spacing-7: calc(.25rem * 7);
+  --spacing-8: calc(.25rem * 8);
+  --spacing-9: calc(.25rem * 9);
+  --spacing-10: calc(.25rem * 10);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-card: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 8px;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, .05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, .08);
+  --color-success-bg-solid: #d9ffd6;
+  --color-error-bg-solid: #ffe0e0;
+  --color-error-border-solid: #ffe0e0;
+  --color-warning-bg-solid: #fffbbd;
+  --color-warning-text: #573a00;
+  --color-info-bg-solid: #d1f1ff;
+  --color-info-bg-solid-alt: #d1f1ff;
+  --color-info-text: #002a66;
+  --color-info-text-alt: #002a66;
+  --color-emerald: #10b981;
+  --color-teal: #4ecdc4;
+  --color-code-bg: #F3F3F7;
+  --color-code-header-bg: #f1f3f5;
+  --color-code-text: #24292e;
+  --color-code-border: #e1e4e8;
+  --color-code-muted: #6a737d;
+  --color-inline-code-bg: #F3F3F7;
+  --color-inline-code-text: #24292e;
+  --color-inline-code-border: #e1e4e8;
+  --color-scrollbar-thumb: #d1d5db;
+  --color-scrollbar-track: transparent;
+  --color-graph-node-text: #333333;
+  --color-graph-node-text-dim: #7F8C8D;
+  --color-graph-edge-default: #95A5A6;
+  --color-graph-edge-cross: #E67E22;
+  --color-graph-edge-text: #666666;
+  --color-graph-edge-stroke: #ffffff;
+  --color-graph-highlight-bg: #FF6B6B;
+  --color-graph-highlight-border: #E74C3C;
+  --color-graph-search-bg: #FFD700;
+  --color-graph-search-border: #FFA500;
+  --color-graph-focus-border: #C0392B;
+  --color-graph-external-border: #95A5A6;
+  --color-graph-cat-file: #3498DB;
+  --color-graph-cat-folder: #7F8C8D;
+  --color-graph-cat-file-aggregate: #2980B9;
+  --color-graph-cat-class: #9B59B6;
+  --color-graph-cat-function: #2ECC71;
+  --color-graph-cat-method: #1ABC9C;
+  --color-graph-cat-variable: #F39C12;
+  --color-graph-cat-import: #D35400;
+  --color-graph-cat-module: #5B6ABF;
+  --color-graph-cat-concept: #E74C3C;
+  --color-graph-cat-person: #FF6B6B;
+  --color-graph-cat-org: #4ECDC4;
+  --color-graph-cat-organization: #4ECDC4;
+  --color-graph-cat-product: #A29BFE;
+  --color-graph-cat-metric: #FD79A8;
+  --color-graph-cat-location: #34495E;
+  --color-graph-cat-date: #E056A0;
+  --color-graph-cat-code: #3498DB;
+  --color-graph-cat-doc: #7F8C8D;
+  --color-graph-cat-url: #00B894;
+  --color-graph-cat-email: #6C5CE7;
+  --color-graph-cat-unknown: #BDC3C7;
+  --color-graph-rel-contains: #BDC3C7;
+  --color-graph-rel-extends: #9B59B6;
+  --color-graph-rel-implements: #3498DB;
+  --color-graph-rel-imports: #E67E22;
+  --color-graph-rel-uses: #2ECC71;
+  --color-graph-rel-calls: #27AE60;
+  --color-graph-rel-references: #F39C12;
+  --color-graph-rel-related-to: #95A5A6;
+  --color-graph-rel-works-on: #E74C3C;
+  --color-graph-rel-owns: #1ABC9C;
+  --color-graph-rel-depends-on: #E67E22;
+  --color-graph-rel-parent-of: #BDC3C7;
+  --qs-content: #fff;
+  --qs-main: #fff;
+  --qs-primary-foreground: #131920;
+  --qs-secondary-foreground: #656871;
+  --qs-tertiary-foreground: #9ca3af;
+  --qs-placeholder-foreground: #8c8c94;
+  --qs-divider: #dedee3;
+  --qs-default-border: #8c8c94;
+  --qs-neutral-soft: #b4b4bb;
+  --qs-neutral-gray-50: #f9fafb;
+  --qs-tertiary-background: #f9fafb;
+  --qs-action-hover: #f3f3f7;
+  --qs-primary-default: #4200db;
+  --qs-primary-dark: #35009e;
+  --qs-primary-light: #e8e6ff;
+  --qs-success-default: #00802f;
+  --qs-error-default: #db0000;
+  --qs-font-sans: "Amazon Ember", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
+  --qs-font-family: "Amazon Ember", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
+  --qs-font-base-letter-spacing: .15px;
+  --qs-shadow-sm: 0 0 2px 0 #00000029, 0 0 4px 0 #00000029;
+  --qs-shadow-md: 0 0 2px 0 #00000029, 0 2px 8px 1px #00000029;
+  --qs-shadow-lg: 0 4px 16px 4px #00000029, 0 2px 6px 1px #00000029;
+  --qs-shadow-xl: 0 4px 8px 2px #00000029, 0 6px 20px 4px #00000029;
+  --qs-width-modal-sm: 384px;
+  --qs-width-modal-md: 600px;
+  --qs-width-modal-lg: 1136px;
+  --qs-grid-gap: 16px;
+  --qs-grid-gap-xl: 24px;
+  --qs-primary-medium: #8575ff;
+  --qs-primary-inverse: #fff;
+  --qs-neutral-lightest: #f9f9fb;
+  --qs-neutral-light: #f3f3f7;
+  --qs-neutral-default: #dedee3;
+  --qs-neutral-medium: #8c8c94;
+  --qs-neutral-deep: #656871;
+  --qs-neutral-dark: #333843;
+  --qs-neutral-strong: #131920;
+  --qs-neutral-white: #fff;
+  --qs-neutral-black: #000;
+  --qs-success-medium: #005c26;
+  --qs-success-dark: #00471e;
+  --qs-success-light: #d9ffd6;
+  --qs-success-inverse: #fff;
+  --qs-info-default: #006ce0;
+  --qs-info-medium: #003b8f;
+  --qs-info-dark: #002a66;
+  --qs-info-light: #d1f1ff;
+  --qs-info-inverse: #fff;
+  --qs-warning-default: #f2b100;
+  --qs-warning-medium: #db9200;
+  --qs-warning-dark: #573a00;
+  --qs-warning-light: #fffbbd;
+  --qs-warning-inverse: #573a00;
+  --qs-warning-experimental: #f2b100;
+  --qs-warning-experimental-light: #fffbbd;
+  --qs-warning-experimental-light-foreground: #fffbbd;
+  --qs-error-medium: #900;
+  --qs-error-dark: #700000;
+  --qs-error-light: #ffe0e0;
+  --qs-error-inverse: #fff;
+  --qs-connection-default: #db3300;
+  --qs-connection-soft: #ff997a;
+  --qs-connection-light: #ffe0d6;
+  --qs-connection-dark: #661800;
+  --qs-automation-default: #b3008f;
+  --qs-automation-medium: #d600ba;
+  --qs-automation-soft: #ff94f1;
+  --qs-automation-light: #ffe0fb;
+  --qs-automation-dark: #660052;
+  --qs-insight-default: #a000b8;
+  --qs-insight-soft: #f299ff;
+  --qs-insight-light: #fce6ff;
+  --qs-insight-dark: #590066;
+  --qs-visualization-default: #7300e5;
+  --qs-visualization-soft: #d4a8ff;
+  --qs-visualization-light: #f2e5ff;
+  --qs-visualization-dark: #45008a;
+  --qs-spice: #ff9800;
+  --qs-coachmark: #006ce0;
+  --qs-brand: #fff;
+  --qs-brand-foreground: #131920;
+  --qs-brand-navbar: #131920;
+  --qs-brand-navbar-foreground: #fff;
+  --qs-brand-navbar-light: #dedee3;
+  --qs-brand-navbar-dark: #000;
+  --qs-application-navbar: #4200db;
+  --qs-application-navbar-foreground: #fff;
+  --qs-application-navbar-light: #e8e6ff;
+  --qs-application-navbar-dark: #35009e;
+  --qs-dimension: #4200db;
+  --qs-dimension-foreground: #fff;
+  --qs-dimension-experimental: #4200db;
+  --qs-dimension-experimental-foreground: #4200db;
+  --qs-measure: #00802f;
+  --qs-measure-foreground: #fff;
+  --qs-measure-experimental: #f2b100;
+  --qs-measure-experimental-foreground: #f2b100;
+  --qs-content-inverse: #333843;
+  --qs-content-inverse-active: #131920;
+  --qs-secondary: #dedee3;
+  --qs-disabled: #8c8c94;
+  --qs-divider-light: #f3f3f7;
+  --qs-hover-border: #333843;
+  --qs-active-border: #4200db;
+  --qs-disabled-border: #dedee3;
+  --qs-error-border: #ffe0e0;
+  --qs-error-active-border: #db0000;
+  --qs-disabled-foreground: #b4b4bb;
+  --qs-primary-inverse-foreground: #fff;
+  --qs-error-foreground: #db0000;
+  --qs-contrast-foreground: #131920;
+  --qs-main-foreground: #131920;
+  --qs-main-secondary-foreground: #656871;
+  --qs-action-disabled: #f3f3f7;
+  --qs-action-active: #e8e6ff;
+  --qs-default-badge: #dedee3;
+  --qs-tag-default: #dedee3;
+  --qs-tag-soft-border: #b4b4bb;
+  --qs-focus-offset: 1px;
+  --qs-toggle-tile-sm: calc(.25rem * 8);
+  --qs-toggle-tile-md: calc(.25rem * 12);
+  --qs-toggle-tile-lg: calc(.25rem * 15);
+  --qs-shadow-pin-right: inset 4px 0 4px -4px #00000029;
+  --qs-shadow-pin-left: inset -4px 0 4px -4px #00000029;
+  --react-pdf-text-layer: 1;
+  --highlight-bg-color: rgba(180, 0, 170, 1);
+  --highlight-selected-bg-color: rgba(0, 100, 0, 1);
+  --react-pdf-annotation-layer: 1;
+  --annotation-unfocused-field-background: url("data:image/svg+xml;charset=UTF-8,<svg width='1px' height='1px' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' style='fill:rgba(0, 54, 255, 0.13);'/></svg>");
+  --input-focus-border-color: Highlight;
+  --input-focus-outline: 1px solid Canvas;
+  --input-unfocused-border-color: transparent;
+  --input-disabled-border-color: transparent;
+  --input-hover-border-color: black;
+  --link-outline: none;
+  color-scheme: light;
+}
+body { background: var(--color-bg); color: var(--color-text); }
+a { color: var(--color-link, var(--color-primary)); }</style><meta charset="UTF-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root {
+  --navy: #1B2A4A;
+  --accent: #2E86C1;
+  --surface: #ffffff;
+  --text: #333333;
+  --text-secondary: #555555;
+  --text-muted: #888888;
+  --border: #e0e0e0;
+  --gradient: linear-gradient(135deg, #1B2A4A 0%, #2E86C1 100%);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f7fa; color: var(--text); line-height: 1.6; }
+.hero { background: var(--gradient); padding: 60px 40px; text-align: center; color: white; }
+.hero-inner { max-width: 900px; margin: 0 auto; }
+.avatar { width: 150px; height: 150px; border-radius: 50%; border: 4px solid rgba(255,255,255,0.5); margin: 0 auto 24px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
+.avatar img { width: 100%; height: 100%; object-fit: cover; }
+.hero h1 { font-size: 32px; font-weight: 700; margin-bottom: 8px; }
+.hero .subtitle { font-size: 17px; opacity: 0.9; margin-bottom: 20px; }
+.links { display: flex; gap: 12px; justify-content: center; margin-top: 20px; flex-wrap: wrap; }
+.links a { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 13px; transition: background 0.2s; }
+.links a:hover { background: rgba(255,255,255,0.25); }
+.container { max-width: 900px; margin: 0 auto; padding: 40px 24px; }
+section { margin-bottom: 36px; }
+h2 { font-size: 20px; color: var(--navy); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--accent); }
+.summary { font-size: 15px; color: var(--text-secondary); line-height: 1.7; }
+.metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; margin: 24px 0; }
+.metric { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px; text-align: center; }
+.metric .value { font-size: 28px; font-weight: 700; color: var(--accent); }
+.metric .label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px; }
+.skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 600px) { .skills-grid { grid-template-columns: 1fr; } }
+.skill-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 16px; }
+.skill-card h4 { font-size: 13px; color: var(--navy); font-weight: 600; margin-bottom: 6px; }
+.skill-card p { font-size: 12.5px; color: var(--text-secondary); line-height: 1.5; }
+.timeline { position: relative; padding-left: 24px; border-left: 2px solid var(--border); }
+.timeline-item { margin-bottom: 24px; position: relative; }
+.timeline-item::before { content: ''; position: absolute; left: -29px; top: 6px; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
+.timeline-item .role { font-weight: 600; color: var(--navy); font-size: 15px; }
+.timeline-item .company { color: var(--text-secondary); font-size: 14px; }
+.timeline-item .date { color: var(--text-muted); font-size: 12px; }
+.timeline-item .desc { font-size: 13px; color: var(--text-secondary); margin-top: 6px; }
+.blog-list { list-style: none; }
+.blog-list li { padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 13.5px; }
+.blog-list li:last-child { border-bottom: none; }
+.blog-list a { color: var(--accent); text-decoration: none; }
+.blog-list a:hover { text-decoration: underline; }
+.blog-list .channel { font-size: 11px; color: var(--text-muted); background: #f0f4f8; padding: 2px 6px; border-radius: 3px; margin-left: 6px; }
+.certs { display: flex; flex-wrap: wrap; gap: 8px; }
+.cert-badge { background: #f0f4f8; border: 1px solid var(--border); border-radius: 6px; padding: 6px 12px; font-size: 12px; color: var(--navy); font-weight: 500; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+<div class="hero-inner">
+<div class="avatar"><img src="/c/d20b78e8-5f34-4279-893e-70fcb9b02398/workspace/artifacts/headshot.jpeg" alt="Praveen Rao Haranahalli S."></div>
+<h1>Praveen Rao Haranahalli S.</h1>
+<div class="subtitle">Enterprise Architect | Cloud Transformation, GenAI, Data Strategy &amp; Security</div>
+<div class="links">
+<a href="https://www.linkedin.com/in/praveenraohs" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+<a href="https://www.credly.com/users/praveen-rao-haranahalli-sarjanarao.d7a79066" target="_blank"><i class="fas fa-certificate"></i> Credly</a>
+<a href="https://aws.amazon.com/blogs/mt/author/sarjanp/" target="_blank"><i class="fas fa-pen"></i> AWS Blogs</a>
+</div>
+</div>
+</div>
+
+<div class="container">
+
+<section>
+<h2>About</h2>
+<p class="summary">Enterprise Architect with 20+ years of experience defining cloud, data, AI/ML, modernization, and security strategies for Fortune 500 enterprises across healthcare, life sciences, insurance, financial services, retail, and supply chain. Trusted advisor to CTO/CIO/VP Engineering stakeholders, translating business objectives into multi-year architecture roadmaps and enterprise execution plans. Equally effective leading hands-on GenAI workshops, customer workflow discovery, and working prototype builds using RAG, multi-agent architectures, tool/function calling, and production guardrails to accelerate adoption from concept to production.</p>
+</section>
+
+<section>
+<div class="metrics">
+<div class="metric"><div class="value">20+</div><div class="label">Years Experience</div></div>
+<div class="metric"><div class="value">70%</div><div class="label">Cost Reduction</div></div>
+<div class="metric"><div class="value">90%</div><div class="label">Data Freshness Gain</div></div>
+<div class="metric"><div class="value">12</div><div class="label">Published Blogs</div></div>
+<div class="metric"><div class="value">10</div><div class="label">AWS Certifications</div></div>
+<div class="metric"><div class="value">27K+</div><div class="label">Blog Views</div></div>
+</div>
+</section>
+
+<section>
+<h2>Technical Expertise</h2>
+<div class="skills-grid">
+<div class="skill-card"><h4><i class="fas fa-robot"></i> LLM Applications &amp; GenAI</h4><p>RAG pipelines, multi-agent orchestration, tool/function calling, vector search, embeddings, prompt engineering, medical imaging AI, voice AI, human-in-the-loop</p></div>
+<div class="skill-card"><h4><i class="fas fa-shield-halved"></i> AI Safety &amp; Governance</h4><p>Evaluation frameworks, hallucination mitigation, guardrails, AI observability, regulatory traceability, prompt injection, compliance-ready patterns</p></div>
+<div class="skill-card"><h4><i class="fas fa-users"></i> Customer AI Delivery</h4><p>Technical discovery, workflow mapping, rapid prototyping, POC/MVP planning, developer workshops, enterprise integration, production readiness</p></div>
+<div class="skill-card"><h4><i class="fas fa-cloud"></i> Cloud &amp; Platform</h4><p>Enterprise landing zones, hybrid/multi-cloud, app modernization, Kubernetes, serverless, distributed systems, observability, resilience engineering</p></div>
+<div class="skill-card"><h4><i class="fas fa-database"></i> Data &amp; Retrieval</h4><p>Lakehouse, data mesh governance, streaming (Kafka/Kinesis/Pub/Sub), ETL/ELT, open table formats, semantic search, petabyte-scale migrations</p></div>
+<div class="skill-card"><h4><i class="fas fa-lock"></i> Security &amp; Compliance</h4><p>Zero Trust, identity federation, SAML/OIDC, encryption, threat detection, automated compliance, HIPAA, GxP, GDPR</p></div>
+<div class="skill-card"><h4><i class="fas fa-code"></i> Engineering</h4><p>Python, JavaScript/Node.js, Java, SQL, Bash, Docker, Kubernetes, Terraform, CI/CD, infrastructure as code, policy as code</p></div>
+<div class="skill-card"><h4><i class="fas fa-server"></i> Cloud Platforms</h4><p>AWS (deep), cross-platform patterns applicable to Google Cloud, Azure, and hybrid enterprise environments</p></div>
+</div>
+</section>
+
+<section>
+<h2>Experience</h2>
+<div class="timeline">
+<div class="timeline-item">
+<div class="role">Senior Solutions Architect</div>
+<div class="company">Amazon Web Services</div>
+<div class="date">Jul 2020 – Present</div>
+<div class="desc">Customer-facing enterprise architect advising Fortune 500 organizations. Partner with account teams, specialists, and delivery organizations to shape cloud, AI/ML, data, security, and modernization strategies. Led AI-DLC workshops enabling 40+ developers to build GenAI prototypes in days. Orchestrated multi-vendor AI solutions across GPU partners and SIs for medical imaging AI. Achieved 70% cost reduction and 90% data freshness improvement through lakehouse modernization.</div>
+</div>
+<div class="timeline-item">
+<div class="role">Cloud Solutions Architect</div>
+<div class="company">Deloitte Consulting LLP</div>
+<div class="date">Mar 2017 – Jul 2020</div>
+<div class="desc">Built multi-cloud governance platforms, serverless microservices, and compliance automation for banking, insurance, and healthcare enterprises. Presented at AWS re:Invent 2017.</div>
+</div>
+<div class="timeline-item">
+<div class="role">Senior Systems Engineer</div>
+<div class="company">IBM</div>
+<div class="date">2011 – 2017</div>
+<div class="desc">Led enterprise integration and middleware architecture for commercial insurance platforms, including SOA orchestration, distributed systems, and early cloud infrastructure ownership.</div>
+</div>
+<div class="timeline-item">
+<div class="role">Solution Engineer / Software Developer</div>
+<div class="company">SOAMatrix &amp; Satyam</div>
+<div class="date">2006 – 2011</div>
+<div class="desc">SaaS CRM platform architecture, J2EE and SOA enterprise integrations for retail and banking clients.</div>
+</div>
+</div>
+</section>
+
+<section>
+<h2>Published Blogs</h2>
+<ul class="blog-list">
+<li><a href="https://aws.amazon.com/blogs/machine-learning/clario-enhances-the-quality-of-the-clinical-trial-documentation-process-with-amazon-bedrock/">Clario enhances clinical trial documentation with Amazon Bedrock</a><span class="channel">AI/ML</span></li>
+<li><a href="https://aws.amazon.com/blogs/machine-learning/clario-streamlines-clinical-trial-software-configurations-using-amazon-bedrock/">Clario streamlines clinical trial configurations using Bedrock</a><span class="channel">AI/ML</span></li>
+<li><a href="https://aws.amazon.com/blogs/machine-learning/how-clario-automates-clinical-research-analysis-using-generative-ai-on-aws/">How Clario automates clinical research with GenAI on AWS</a><span class="channel">AI/ML</span></li>
+<li><a href="https://aws.amazon.com/blogs/architecture/use-generative-ai-on-aws-for-efficient-clinical-document-analysis/">Use GenAI on AWS for efficient clinical document analysis</a><span class="channel">Architecture</span></li>
+<li><a href="https://aws.amazon.com/blogs/apn/reimagining-healthcare-delivery-with-validic-and-aws/">Reimagining healthcare delivery with Validic and AWS</a><span class="channel">APN</span></li>
+<li><a href="https://aws.amazon.com/blogs/security/manage-aws-security-hub-using-cloudformation/">Manage AWS Security Hub using CloudFormation</a><span class="channel">Security</span></li>
+<li><a href="https://aws.amazon.com/blogs/security/disabling-security-hub-controls-in-a-multi-account-environment/">Disabling Security Hub controls in a multi-account environment</a><span class="channel">Security</span></li>
+<li><a href="https://aws.amazon.com/blogs/storage/how-to-restore-archived-amazon-ec2-backup-recovery-points-from-the-amazon-s3-glacier-storage-classes/">How to restore archived EC2 backup recovery points from S3 Glacier</a><span class="channel">Storage</span></li>
+<li><a href="https://aws.amazon.com/blogs/storage/how-to-archive-amazon-ec2-backup-recovery-points-to-amazon-s3-glacier-storage-classes/">How to archive EC2 backup recovery points to S3 Glacier</a><span class="channel">Storage</span></li>
+<li><a href="https://aws.amazon.com/blogs/mt/how-to-enable-vpc-flow-logs-automatically-using-aws-config-rules/">How to enable VPC Flow Logs automatically using AWS Config</a><span class="channel">Cloud Ops</span></li>
+<li><a href="https://aws.amazon.com/blogs/mt/automate-vulnerability-management-and-remediation-in-aws-using-amazon-inspector-and-aws-systems-manager-part-1/">Automate vulnerability management – Part 1</a><span class="channel">Cloud Ops</span></li>
+<li><a href="https://aws.amazon.com/blogs/mt/automate-vulnerability-management-and-remediation-in-aws-using-amazon-inspector-and-aws-systems-manager-part-2/">Automate vulnerability management – Part 2</a><span class="channel">Cloud Ops</span></li>
+</ul>
+</section>
+
+<section>
+<h2>Certifications</h2>
+<div class="certs">
+<div class="cert-badge">Solutions Architect Professional</div>
+<div class="cert-badge">DevOps Engineer Professional</div>
+<div class="cert-badge">Security Specialty</div>
+<div class="cert-badge">ML Specialty</div>
+<div class="cert-badge">SA Associate</div>
+<div class="cert-badge">Developer Associate</div>
+<div class="cert-badge">SysOps Associate</div>
+<div class="cert-badge">Cloud Practitioner</div>
+<div class="cert-badge">AI Practitioner</div>
+</div>
+<p style="margin-top: 16px; font-size: 13px; color: var(--text-muted);">B.E., Telecommunication — Visvesvaraya Technological University, India (2006)</p>
+</section>
+
+<section>
+<h2>Speaking &amp; Community</h2>
+<ul class="blog-list">
+<li><i class="fas fa-microphone" style="color: var(--accent); margin-right: 8px;"></i>AWS re:Invent 2021 — Builder session on security at scale</li>
+<li><i class="fas fa-microphone" style="color: var(--accent); margin-right: 8px;"></i>AWS re:Invent 2017 — Multi-cloud platform demo (Deloitte)</li>
+<li><i class="fas fa-users" style="color: var(--accent); margin-right: 8px;"></i>Security &amp; Compliance Technical Field Community member; invited SME for partner events</li>
+<li><i class="fas fa-graduation-cap" style="color: var(--accent); margin-right: 8px;"></i>Academic advisory committee member; hackathon judge; Florida AWS User Groups contributor</li>
+</ul>
+</section>
+
+</div>
+</body></html>
